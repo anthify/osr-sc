@@ -1,0 +1,19 @@
+{
+  "name": "osr-sc",
+  "version": "0.0.1",
+  "description": "A OSR development area\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atostudios/osr-sc.git"
+  },
+  "author": "Anthony O'Neill @ SaleCycle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atostudios/osr-sc/issues"
+  },
+  "homepage": "https://github.com/atostudios/osr-sc#readme"
+}
