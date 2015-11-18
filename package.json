@@ -1,7 +1,7 @@
 {
   "name": "osr-sc",
   "version": "0.0.1",
-  "description": "A OSR development area\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "description": "A OSR development area",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/atostudios/osr-sc/issues"
   },
-  "homepage": "https://github.com/atostudios/osr-sc#readme"
+  "homepage": "https://github.com/atostudios/osr-sc#readme",
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compile-handlebars": "^0.5.0",
+    "gulp-front-matter": "^1.3.0",
+    "gulp-hb": "^2.6.5",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "imagemin-mozjpeg": "^5.1.0",
+    "imagemin-pngquant": "^4.2.0"
+  }
 }

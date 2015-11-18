@@ -1,0 +1,40 @@
+// Main styles
+
+@charset "utf-8";
+
+
+/* This stops the initial white background issue and set the padding above the OSR */
+.osr-content { background-color: transparent !important; top: 10% !important; }
+
+/* This lets you control the colour of the see-through overlay */
+.osr-overlay { background-color: rgba(0,0,0,0.7) !important; }
+
+/* Fix to make sure the div doesn't appear at the bottom of the page (it shouldn't any way, but there's a bug that causes it to). The 1px by 1px lets it pre-load assets. */
+div.hidden { height: 1px; width: 1px; display: none; }
+
+
+/***************** Your Desktop Styles Below *****************/
+
+#wrapper-sc {
+	font-family: sans-serif;
+	display: block;
+	box-sizing: border-box;
+    width: 500px;
+	margin: 0px auto;
+}
+
+
+/**************** Your Responsive Styles Below ******************/
+
+@media screen and (max-width: 500px) {
+
+.osr-content { width: 100% !important; }
+
+#wrapper-sc { width: 100% !important;; }
+	
+}
+
+.this-is-a-test {
+	display: flex;
+	flex-direction: row;
+}

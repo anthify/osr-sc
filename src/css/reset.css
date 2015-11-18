@@ -1,0 +1,100 @@
+/********** Clearing up for local use only **********/
+
+/* Adds border box to every box element inside our wrapper - other than the main wrapper */
+#wrapper-sc * {
+	-webkit-box-sizing: border-box; /* Needed for mobile WebKit */
+	-moz-box-sizing: border-box; /* Needed for Firefox */
+	box-sizing: border-box;
+}
+
+
+/* Clearfix Styles */
+#wrapper-sc .group-sc:before, .group-sc:after {
+	display: table;
+	content: "";
+}
+#wrapper-sc .group-sc:after {
+	clear: both;
+}
+
+
+/* Text selection colours */
+#wrapper-sc::-moz-selection {
+background: #000000;
+color: #fff;
+text-shadow: none;
+}
+#wrapper-sc::selection {
+	background: #000000;
+	color: #fff;
+	text-shadow: none;
+}
+
+
+/* Resetting styles to avoid clashing with client website  */
+#wrapper-sc p {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	line-height:15px;
+}
+
+#wrapper-sc a {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	line-height:15px;
+	text-decoration:none;
+	color:#6AA8FB;
+}
+
+#wrapper-sc h1 {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:21px;
+	line-height:25px;
+}
+
+#wrapper-sc h2 {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:19px;
+	line-height:23px;
+}
+
+#wrapper-sc h3 {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:16px;
+	line-height:20px;
+}
+
+#wrapper-sc h4 {
+	font-family: sans-serif;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	line-height:18px;
+}
+
+#wrapper-sc ul, #wrapper-sc ol {
+	font-family: sans-serif;
+	margin: 0 0;
+	padding: 0 0 0 0;
+}
+
+#wrapper-sc dd {
+	font-family: sans-serif;
+	margin: 0 0 0 0;
+}
+
+#wrapper-sc nav ul, #wrapper-sc nav ol {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}

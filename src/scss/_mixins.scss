@@ -1,0 +1,54 @@
+
+
+// Brand Colors
+
+$primary: #DFEFFC;
+$secondary: #197CDB;
+$tertiary: #197CDB;
+
+
+// Font Face
+
+@mixin font-face($fontfamily, $fontname){
+	@font-face {
+	font-family: '#{$fontfamily}';
+    src: url('../fonts/#{$fontname}.eot');
+    src: url('../fonts/.svg##{$fontfamily}') format('svg'),
+          url('../fonts/#{$fontname}.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/#{$fontname}.woff') format('woff'),
+         url('../fonts/#{$fontname}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;	
+	}
+}
+
+/* EXAMPLE CODE: @include font-face(lato,lato) */
+
+// Border Radius
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;  /* Stops bg color from leaking outside the border */
+}
+
+/* EXAMPLE CODE: @include border-radius(5px 5px 10px 5px) */
+
+
+// Font Styles
+
+    // This mixin sets the font size in rem's with a px fallback.
+    @mixin font-size($sizeValue: 12 ){
+    font-size: $sizeValue + px; //fallback for old browsers
+    font-size: (0.125 * $sizeValue) + rem;
+    }
+
+    /* EXAMPLE CODE: @include font-size(12) */
+
+
+    // This mixin sets the line height in rem's with a px fallback.
+    @mixin line-height($heightValue: 12 ){
+    line-height: $heightValue + px; //fallback for old browsers
+    line-height: (0.125 * $heightValue) + rem;
+    }
+    
+    /* EXAMPLE CODE: @include line-height(12) */
