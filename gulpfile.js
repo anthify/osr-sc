@@ -6,8 +6,10 @@ var gulp = require('gulp'),
 	mozjpeg = require('imagemin-mozjpeg'),
 	handlebars = require('gulp-compile-handlebars'),
 	rename = require('gulp-rename'),
+	jsonSass = require('gulp-json-sass'),
 	browserSync = require('browser-sync').create(),
-	templateData = require('./src/config.js');
+	requireNew = require('require-new'),
+	jsonTransform = require('gulp-json-transform');
 
 
 //Image compression using imagemin but their jpg/jpeg compression isn't very good so we're using mozjpeg in the next task
@@ -31,10 +33,25 @@ gulp.task('jpg-shrink', function() {
 
 
 //This task compiles the sass from styles.scss and outputs it as styles.css
-gulp.task('compile-sass', function() {
+gulp.task('compile-sass', ['json-scss'], function() {
 	return gulp.src('./src/scss/styles.scss')
 	.pipe(sass())
 	.pipe(gulp.dest('./dist/css'));
+});
+
+
+gulp.task('json-scss', function() {
+	return gulp.src('./src/config.json')
+	.pipe(jsonTransform(function(data) {
+	        return {
+		            imgs: "'" + data.src + "'"
+        	};
+	    }))
+    .pipe(jsonSass({
+     	 sass: false
+    	}))
+    .pipe(rename('_config.scss'))
+    .pipe(gulp.dest('./src/scss'));
 });
 
 
@@ -49,7 +66,7 @@ gulp.task('autoprefix', ['compile-sass'], function() {
 //Handlebars
 gulp.task('html-compile', function() { 
     return gulp.src('./src/index.handlebars')
-        .pipe(handlebars(templateData))
+        .pipe(handlebars(requireNew('./src/config.json')))
         .pipe(rename('index.html'))
         .pipe(gulp.dest('./dist'));
 });
@@ -67,7 +84,8 @@ gulp.task('browser-sync', function() {
 
 gulp.task('watcher', function() {
 	gulp.watch(['./src/scss/**.scss'], ['autoprefix']);
-	gulp.watch(['./index.handlebars'], ['html-compile']);
+	gulp.watch(['./src/index.handlebars', './src/config.json'], ['html-compile']);
+	gulp.watch(['./src/config.json'], ['autoprefix']);
 });
 
 gulp.task('default', ['html-compile','autoprefix','browser-sync', 'watcher']);
