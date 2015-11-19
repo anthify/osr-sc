@@ -30,4 +30,54 @@ dist
 ##Why index.handlebars?
 Handlebars is a templating engine which compiles into HTML after converting the values in your config.js file.
 ##What is config.js?
-The config.js file is used by handlebars to take the tedium out of repetitive tasks such add links and image paths.
+The config.js file is used by handlebars to take the tedium out of repetitive tasks such as adding links and images. It doesn't have to be apart of your workflow but here is an example use case to sell the idea to you!
+
+In your config.js file you have a javascript object. As a starter the repo has the below object
+```
+{
+	title: '',
+	src: '',
+	url: ''
+};
+```
+As you can see we have three properties (title, src, url) but these are enitrely arbitrary so you can add or remove anything within that object. You will also see those proeprties have empty string values so for an example I will add the following;
+```
+{
+	title: 'OSR Client',
+	src: 'http://images.osrclient.cool',
+	url: 'http://www.osrclient.site'
+};
+```
+Now that we have entered these property values into the config.js file we can use them in your handlebars template like this;
+```
+<html>
+    <head>
+        <title>{{title}}</title>
+        <body>
+    </head>
+    <body>
+        <a href="{{url}}/home">
+            <img src="{{src}}/button.png">
+        </a>
+    </body>
+</html>
+```
+Run gulp
+```
+gulp
+```
+And in the dist file you find index.html with the following compiled html
+```
+<html>
+    <head>
+        <title>OSR Client</title>
+        <body>
+    </head>
+    <body>
+        <a href="http://www.osrclient.site/home">
+            <img src="http://images.osrclient.cool/button.png">
+        </a>
+    </body>
+</html>
+```
+Amazed? If not, think of how it will speed your development workflow as you have more images and links in your OSR, but if you're still not convinced you don't have to use this feature but you will have to work in the index.handlebars file.
