@@ -44,7 +44,7 @@ gulp.task('json-scss', function() {
 	return gulp.src('./src/config.json')
 	.pipe(jsonTransform(function(data) {
 	        return {
-		            imgs: "'" + data.src + "'"
+		            src: "'" + data.src + "'"
         	};
 	    }))
     .pipe(jsonSass({

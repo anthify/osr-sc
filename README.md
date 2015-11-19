@@ -81,3 +81,16 @@ And in the dist file you find index.html with the following compiled html
 </html>
 ```
 Amazed? If not, think of how it will speed your development workflow as you have more images and links in your OSR, but if you're still not convinced you don't have to use this feature but you will have to work in the index.handlebars file.
+
+The above also works for images being used in CSS as background images. So the property for the 'src' is automagically sent to the _config.scss file and set as $src variable.
+```
+.wrapper-sc {
+    background: url($src + '/bg.jpg');
+}
+```
+Will compile to:
+```
+.wrapper-sc {
+    background: url('http://images.osrclient.cool/bg.jpg');
+}
+```
