@@ -2,8 +2,8 @@ context =
 
 {
 	title: 'Test OSR Example',
-	src: '',
-	url: ''
+	src: 'imgs',
+	url: '#'
 };
 
 module.exports = context;

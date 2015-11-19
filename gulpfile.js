@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 	handlebars = require('gulp-compile-handlebars'),
 	rename = require('gulp-rename'),
 	browserSync = require('browser-sync').create(),
-	templateData = require('./config.js');
+	templateData = require('./src/config.js');
 
 
 //Image compression using imagemin but their jpg/jpeg compression isn't very good so we're using mozjpeg in the next task
@@ -48,7 +48,7 @@ gulp.task('autoprefix', ['compile-sass'], function() {
 
 //Handlebars
 gulp.task('html-compile', function() { 
-    return gulp.src('./index.handlebars')
+    return gulp.src('./src/index.handlebars')
         .pipe(handlebars(templateData))
         .pipe(rename('index.html'))
         .pipe(gulp.dest('./dist'));
@@ -62,7 +62,7 @@ gulp.task('browser-sync', function() {
 				baseDir: "./dist"
 			}
 		});
-	gulp.watch(['./dist/css/**/*','./index.html']).on("change", browserSync.reload);
+	gulp.watch(['./dist/css/**/*','./dist/index.html']).on("change", browserSync.reload);
 });
 
 gulp.task('watcher', function() {
@@ -70,6 +70,6 @@ gulp.task('watcher', function() {
 	gulp.watch(['./index.handlebars'], ['html-compile']);
 });
 
-gulp.task('default', ['browser-sync', 'watcher']);
+gulp.task('default', ['html-compile','autoprefix','browser-sync', 'watcher']);
 
-gulp.task('deploy', ['img-shrink','html-compile']);
+gulp.task('deploy', ['img-shrink','html-compile','autoprefix']);
