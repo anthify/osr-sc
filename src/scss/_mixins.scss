@@ -52,3 +52,10 @@ $tertiary: #197CDB;
     }
     
     /* EXAMPLE CODE: @include line-height(12) */
+
+
+@mixin media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}

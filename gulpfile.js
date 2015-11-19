@@ -71,6 +71,11 @@ gulp.task('html-compile', function() {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('reset-css', function() {
+	return gulp.src('./src/css/reset.css')
+			.pipe(gulp.dest('./dist/css'));
+});
+
 
 //watch
 gulp.task('browser-sync', function() {
@@ -79,7 +84,7 @@ gulp.task('browser-sync', function() {
 				baseDir: "./dist"
 			}
 		});
-	gulp.watch(['./dist/css/**/*','./dist/index.html']).on("change", browserSync.reload);
+	gulp.watch(['./dist/css/*','./dist/index.html']).on("change", browserSync.reload);
 });
 
 gulp.task('watcher', function() {
@@ -88,6 +93,6 @@ gulp.task('watcher', function() {
 	gulp.watch(['./src/config.json'], ['autoprefix']);
 });
 
-gulp.task('default', ['html-compile','autoprefix','browser-sync', 'watcher']);
+gulp.task('default', ['reset-css','html-compile','autoprefix','browser-sync', 'watcher']);
 
 gulp.task('deploy', ['img-shrink','html-compile','autoprefix']);
