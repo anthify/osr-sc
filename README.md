@@ -18,8 +18,8 @@ gulp
 ##Building your OSR
 You only edit these files
 ```
-index.handlebars
-congif.js
+src/index.handlebars
+src/congif.js
 src/sass/
 src/imgs/
 ```
@@ -35,12 +35,12 @@ The config.js file is used by handlebars to take the tedium out of repetitive ta
 In your config.js file you have a javascript object. As a starter the repo has the below object
 ```
 {
-	title: '',
-	src: '',
-	url: ''
+    title: 'Test OSR Example',
+    src: 'imgs',
+    url: '#'
 };
 ```
-As you can see we have three properties (title, src, url) but these are enitrely arbitrary so you can add or remove anything within that object. You will also see those proeprties have empty string values so for an example I will add the following;
+As you can see we have three properties (title, src, url) but these are enitrely arbitrary so you can add or remove anything within that object. You will also see those proeprties have string value that as paths are only relevant to local assets so for an example I will change the values to:
 ```
 {
 	title: 'OSR Client',
