@@ -19,7 +19,7 @@ gulp
 You only edit these files
 ```
 src/index.handlebars
-src/congif.js
+src/congif.json
 src/sass/
 src/imgs/
 ```
