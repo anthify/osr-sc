@@ -1,5 +1,6 @@
 {
-	"title": "Nike",
-	"src": "images",
-	"url": "http://www.nike.com"
+	"title": "OSR",
+	"src": "imgs",
+	"url": "http://www.example.com",
+	"message": "This message can be found in src/config.json"
 }
