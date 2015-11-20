@@ -28,11 +28,11 @@ And those files are all compiled and served into the folder
 dist
 ```
 ##Why index.handlebars?
-Handlebars is a templating engine which compiles into HTML after converting the values in your config.js file.
-##What is config.js?
-The config.js file is used by handlebars to take the tedium out of repetitive tasks such as adding links and images. It doesn't have to be apart of your workflow but here is an example use case to sell the idea to you!
+Handlebars is a templating engine which compiles into HTML after converting the values in your config.json file. Go [here]('http://handlebarsjs.com/') to learn more about handlebars.
+##What is config.json?
+The config.json file is used by handlebars to take the tedium out of repetitive tasks such as adding links and images. It doesn't have to be apart of your workflow but here is an example use case to sell the idea to you!
 
-In your config.js file you have a javascript object. As a starter the repo has the below object
+In your config.json file you have a javascript object. As a starter the repo has the below object
 ```
 {
     title: 'Test OSR Example',
